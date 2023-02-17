@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { DELETE_ASTRONAUT, UPDATE_ASTRONAUT } from "../graphql/mutations";
+import Form from "./Form";
 
 const AstronautProfile = ({astronaut}) => {
 
@@ -43,12 +44,6 @@ const AstronautProfile = ({astronaut}) => {
         })
       }
 
-    const form = (
-        <form onSubmit={(e) =>  handleSubmit(e)}>
-            <input type={"text"} name="name" onChange={(e) => handleChange(e)} value={state.name}/>
-            <button type="submit">Update</button>
-        </form>
-    )
 
     return (
         <div className="card">
@@ -56,7 +51,12 @@ const AstronautProfile = ({astronaut}) => {
             <div>
                 {
                    edit ? 
-                   form : 
+                   <Form
+                   handleChange={handleChange}
+                   handleSubmit={handleSubmit}
+                   value={state.name}
+                   label={"Update"}
+                   /> : 
                    <div> <p>{state.name}</p> <button onClick={() => setEdit(!edit)}>Edit</button> </div>
                 }
             </div>
