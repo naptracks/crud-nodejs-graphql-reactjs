@@ -15,11 +15,13 @@ const ListOfAstronauts = () => {
         <div className="wrap center">
             
                 {
+                    astronauts.length !== 0 ?
                     astronauts.map((astronaut, key) => (
                         <Fragment key={key}><AstronautProfile astronaut={astronaut}/></Fragment>
                     ))
+                    :
+                    <h2>Oups! There are no astronaut here, please add one!</h2>
                 }
-            
         </div>
     )
 }

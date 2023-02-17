@@ -32,7 +32,7 @@ function App() {
 
   const addAstronautForm = (
     <form onSubmit={(e) =>  handleSubmit(e)}>
-        <input type={"text"} name="name" placeholder="Add an anstronaut" onChange={(e) => handleChange(e)} value={state.name}/>
+        <input type={"text"} name="name" placeholder="Add an anstronaut name..." onChange={(e) => handleChange(e)} value={state.name}/>
         <button className="create-button" type="submit">Create</button>
     </form>
     )

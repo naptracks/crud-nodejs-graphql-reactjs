@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { DELETE_ASTRONAUT, UPDATE_ASTRONAUT } from "../graphql/mutations";
 
@@ -46,32 +46,28 @@ const AstronautProfile = ({astronaut}) => {
 
       const form = (
         <form onSubmit={(e) =>  handleSubmit(e)}>
-            <input type={"text"} name="name" onChange={(e) => handleChange(e)} value={state.name}/>
-            <button type="submit">Update</button>
+            <input type={"text"} placeholder="Add a name..." name="name" onChange={(e) => handleChange(e)} value={state.name}/>
+            <button className="update-button" type="submit">Update</button>
         </form>
         )
 
     return (
         <div className="profile center column">
-           
+            <h1>Astronaut</h1>
+            <h2>{state.name}</h2> 
             {
                 edit ? 
                 form : 
                 <div> 
                     {/* update name */}
-                    <h2>{state.name}</h2> 
                     <button className="edit-button" onClick={() => setEdit(!edit)}>Edit</button> 
-                         
                     {/* delete astronaut*/}
                     <button className="delete-button" onClick={() => deleteAstronaut({variables: {id: astronaut.id}})}>Delete</button>
                 </div>
             }
-            
             {/* update isInSpace */}
-            <div>
-                <p>{astronaut.isInSpace ? `${state.name} is in space` : `${state.name} is  on earth`}</p>
-                <button className="isInSpace-button" onClick={() => handleClick()}>{state.isInSpace ? "Come back on earth" : "Go to space"}</button>
-            </div>
+            <p>{astronaut.isInSpace ? `${state.name} is in space` : `${state.name} is  on earth`}</p>
+            <button className="isInSpace-button" onClick={() => handleClick()}>{state.isInSpace ? "Come back on earth" : "Go to space"}</button>
         </div>
     )
 }

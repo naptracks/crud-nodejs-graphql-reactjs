@@ -1,4 +1,6 @@
 import fs from "fs/promises";
+import {uuid} from "uuidv4"
+
 
 const getDataFrom = async (path) => JSON.parse(await fs.readFile(path, "utf-8"))
 const findById = (data, id) => data.find(data => data.id === id)
@@ -16,15 +18,6 @@ export default {
                 throw error
             }
         },
-    
-        astronaut: async ({id}) => {
-            try {
-                const astronauts = await getDataFrom("data.json")
-                return findById(astronauts, id)
-            }  catch (error) {
-                throw error
-            }
-        },
 
    
  
@@ -34,7 +27,7 @@ export default {
 
                 const astronauts = await getDataFrom("data.json")
                 const newAstronaut = {
-                    id: astronauts.length + 1,
+                    id: uuid(),
                     name,
                     isInSpace: false
                 }
