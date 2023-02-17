@@ -1,4 +1,5 @@
 import { useQuery} from "@apollo/client";
+import { Fragment } from "react";
 import { GET_ALL_ASTRONAUTS } from "../graphql/queries";
 import AstronautProfile from "./AstronautProfile";
 
@@ -11,14 +12,14 @@ const ListOfAstronauts = () => {
 
 
     return (
-        <div className="center">
-            <ul>
+        <div className="wrap center">
+            
                 {
                     astronauts.map((astronaut, key) => (
-                        <li key={key}><AstronautProfile astronaut={astronaut}/></li>
+                        <Fragment key={key}><AstronautProfile astronaut={astronaut}/></Fragment>
                     ))
                 }
-            </ul>
+            
         </div>
     )
 }

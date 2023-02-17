@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { DELETE_ASTRONAUT, UPDATE_ASTRONAUT } from "../graphql/mutations";
-import Form from "./Form";
+
 
 const AstronautProfile = ({astronaut}) => {
 
@@ -44,29 +44,34 @@ const AstronautProfile = ({astronaut}) => {
         })
       }
 
+      const form = (
+        <form onSubmit={(e) =>  handleSubmit(e)}>
+            <input type={"text"} name="name" onChange={(e) => handleChange(e)} value={state.name}/>
+            <button type="submit">Update</button>
+        </form>
+        )
 
     return (
-        <div className="card">
-            {/* update name */}
-            <div>
-                {
-                   edit ? 
-                   <Form
-                   handleChange={handleChange}
-                   handleSubmit={handleSubmit}
-                   value={state.name}
-                   label={"Update"}
-                   /> : 
-                   <div> <p>{state.name}</p> <button onClick={() => setEdit(!edit)}>Edit</button> </div>
-                }
-            </div>
+        <div className="profile center column">
+           
+            {
+                edit ? 
+                form : 
+                <div> 
+                    {/* update name */}
+                    <h2>{state.name}</h2> 
+                    <button className="edit-button" onClick={() => setEdit(!edit)}>Edit</button> 
+                         
+                    {/* delete astronaut*/}
+                    <button className="delete-button" onClick={() => deleteAstronaut({variables: {id: astronaut.id}})}>Delete</button>
+                </div>
+            }
             
             {/* update isInSpace */}
-            <p>{astronaut.isInSpace ? `${state.name} is in space` : `${state.name} is  on earth`}</p>
-            <button onClick={() => handleClick()}>{state.isInSpace ? "Come back on earth" : "Go to space"}</button>
-
-            {/* delete astronaut*/}
-            <button onClick={() => deleteAstronaut({variables: {id: astronaut.id}})}>Delete</button>
+            <div>
+                <p>{astronaut.isInSpace ? `${state.name} is in space` : `${state.name} is  on earth`}</p>
+                <button className="isInSpace-button" onClick={() => handleClick()}>{state.isInSpace ? "Come back on earth" : "Go to space"}</button>
+            </div>
         </div>
     )
 }
