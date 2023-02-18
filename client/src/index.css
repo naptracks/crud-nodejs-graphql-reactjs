@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -25,21 +25,19 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #E96479;
-  color: white
+  background-color: #e96479;
+  color: white;
 }
 
 input {
-
   height: 2.5rem;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
   border-radius: 0.3rem;
   margin-right: 1rem;
-  border: none
+  border: none;
 }
 
 button {
-
   border: 1px solid white;
   color: white;
   padding: 1rem;
@@ -72,30 +70,27 @@ h1 {
   padding: 2rem;
   border-radius: 1rem;
   margin: 1.5rem;
-  background-color: #4D455D;
+  background-color: #4d455d;
   color: white;
 }
 
-
-
 .edit-button {
-  background-color: #7DB9B6;
+  background-color: #7db9b6;
 }
 
 .delete-button {
-  background-color: #E96479;
+  background-color: #e96479;
   margin-left: 1rem;
 }
 
 .update-button {
-  background-color: #7DB9B6;
+  background-color: #7db9b6;
 }
 
 .isInSpace-button {
-  background-color: #4D455D;
+  background-color: #4d455d;
 }
 
 .create-button {
-  background-color: #E96479;
+  background-color: #e96479;
 }
-
