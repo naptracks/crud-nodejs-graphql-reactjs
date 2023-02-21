@@ -11,7 +11,6 @@ const schema = `
         astronauts: [Astronaut!]
     }
 
-
     type Mutation {
         addAstronaut(name: String!): Astronaut!
         updateAstronaut(id: ID!, name: String!, isInSpace: Boolean!): Astronaut!

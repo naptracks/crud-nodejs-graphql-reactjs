@@ -1,8 +1,7 @@
 import fs from "fs/promises";
 import { uuid } from "uuidv4";
 
-const getDataFrom = async (path) =>
-  JSON.parse(await fs.readFile(path, "utf-8"));
+const getDataFrom = async (path) => JSON.parse(await fs.readFile(path, "utf-8"));
 const findById = (data, id) => data.find((data) => data.id === id);
 
 //Resolvers

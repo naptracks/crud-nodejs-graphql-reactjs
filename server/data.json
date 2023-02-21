@@ -1,12 +1,27 @@
 [
-  {
-    "id": "bbd2c082-2d7c-4870-9a34-7a79f97f88ee",
-    "name": "Cesar ",
-    "isInSpace": false
-  },
-  {
-    "id": "58e713ff-76af-4fb9-9839-4f239c2490b2",
-    "name": "Cesar Martel",
-    "isInSpace": false
-  }
+    {
+        "id": "c784ae15-7e88-4bd1-82b0-8bd60a93f0e1",
+        "name": "Philippe",
+        "isInSpace": true
+    },
+    {
+        "id": "1a884743-a578-42db-8612-2ba12029677f",
+        "name": "Pierre",
+        "isInSpace": true
+    },
+    {
+        "id": "06ea0935-2a66-439c-ba3b-517ff83892b9",
+        "name": "Julie",
+        "isInSpace": false
+    },
+    {
+        "id": "0c5a70b9-1d90-487e-8974-4f2689c96a41",
+        "name": "Sarah",
+        "isInSpace": false
+    },
+    {
+        "id": "200d95d2-75aa-48b4-8a81-98d466c6bced",
+        "name": "Sophie",
+        "isInSpace": false
+    }
 ]

@@ -8,7 +8,7 @@ import cors from "cors";
 const app = express();
 const port = 4000;
 
-//usefull for get request
+//usefull for http request
 app.use("*", cors());
 
 app.use(
