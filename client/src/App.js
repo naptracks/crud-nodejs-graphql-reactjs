@@ -10,7 +10,7 @@ function App() {
   //Mutation
   const [addAstronaut] = useMutation(ADD_ASTRONAUT);
 
-  //handleChange for input type text scalable by name
+
   const handleChange = (e) => {
     setState({
       [e.target.name]: e.target.value,
